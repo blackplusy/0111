@@ -82,3 +82,84 @@
 			windows
 			32位(x86  i386  i686  i586)
 			64位(x64  x86_64)
+2.前端和后端(b/s)
+	a.前端
+		html          静态页面(服务器上什么样子，网页中什么样子)  标记性语言
+		JavaScript    动态页面(1.动画 2.交互)
+		css           样式表(页面美化) 懂代码
+		UI            用户接口(美工)  
+	b.后端
+		操作系统
+			unix
+			linux
+			windows
+		web服务器
+			apache   不支持java 
+			nginx    轻量级web服务器(负载均衡、反向代理)
+			tomcat   java
+			iis      微软
+		数据库服务器
+			oracle    中大型企业
+			mysql     互联网公司
+			sqlserver 微软
+	c.常见搭配
+		操作系统        web服务器       数据库服务器
+		  win            iis             sqlserver/access
+		                 apache          mysql
+		                 tomcat          mysql/oracle
+		  linux          apache          mysql              (LAMP)
+		  	             nginx           mysql              (LNMP)
+		  	             tomcat          mysql/oracle
+3.安装部署ecshop电商环境
+	a.集成软件
+		xampp
+			x:任意操作系统
+			a:apache
+			m:mysql
+			p:php
+			p:perl
+		wamp
+			w:windows
+		phpstudy
+	b.phpstudy简介
+		软件下载建议2016
+		安装:傻瓜安装
+		b1>目录简介
+			apache  	存放web服务器相关文件位置
+				bin 	存放apache命令所在位置
+				conf    存放apache配置文件的位置
+					httpd.conf apache的配置文件
+				logs    存放apache日志文件的位置
+			mysql       存放数据库相关文件的位置
+				bin     存放mysql命令所在位置
+				data    存放mysql数据的位置
+				my.ini  mysql的配置文件
+			www         存放项目代码的位置
+	c.安装部署ecshop
+		c1.启动phpstudy
+		c2.检查apache、mysql的服务和端口
+			apache的主服务   httpd
+			mysql的主服务    mysqld
+			apache的端口     80
+			mysql的端口      3306
+			win+r--cmd(打开命令提示符)
+				tasklist | find "httpd"
+					tasklist   查看当前系统运行的所有进程
+					|          管道，前面的输出作为后面的输入
+					find       搜索
+				netstat -an | find "3306"
+					netstat -an 查看电脑开放的所有端口
+			补充:
+				0.0.0.0   任意IP地址
+				127.0.0.1==localhost 电脑本机
+		c3.下载、解压ecshop.zip
+		c4.复制ecshop1文件夹到phpstudy的www文件夹中
+		c5.浏览器中输入127.0.0.1/ecshop1按照提示安装
+			配置系统注意:
+				数据库主机  localhost
+				端口号      3306
+				用户名      root
+				密码        root
+				数据库名     test
+914338492
+
