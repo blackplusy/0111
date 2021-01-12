@@ -30,3 +30,8 @@
 			时间
 			服务器软件版本
 		d5>响应体
+	e.断点调试
+		bpu http://127.0.0.1/ecshop1
+		bpu
+		bpu http://127.0.0.1/ecshop1/user.php
+		bpu
