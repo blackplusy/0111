@@ -73,3 +73,31 @@
 			mongodb的端口    27017
 			tasklist | find "mongod"
 			netstat -an | find "27017"
+	d.基础命令
+		d1>登录mongodb
+			mongo
+				登录本地test数据库
+			mongo 127.0.0.1/admin
+				登录IP地址为127.0.0.1的admin数据库
+			mongo 127.0.0.1:27017/admin
+				登录IP地址为127.0.0.1的端口27017的admin数据库
+		d2>基础命令
+			数据库分为2部分，一个数据库软件，一个数据库数据
+			mongodb数据库是由集合组成
+			集合是由文档组成
+			db   			查看当前数据库的名字
+			show databases
+			show dbs       	查看当前有哪些数据库
+			use admin       当前数据库切换为admin
+			show collections
+			show tables     查看当前数据库中有哪些集合
+			db.system.version.find()  查看system.version集合中所有文档
+		d3>CURD(增删改查)
+			文档新增
+				db.xiyouji.insert({name:'5kong',age:2000,hooby:'gun'})
+			文档修改
+				db.xiyouji.update({name:'5kong'},{$set:{age:998}})
+			文档查询
+				db.xiyouji.find({age:2000},{_id:0})
+			文档删除
+				db.xiyouji.remove({name:'8jie'})
