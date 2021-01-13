@@ -102,7 +102,43 @@ db.emp.find({$and:[{comm:{$not:{$type:10}}},{$and:[{sal:{$gt:800}},{sal:{$gt:150
 		select * from ecs_goods\G
 		select * from ecs_goods;
 			查看ecs_goods表中所有数据
+	f.表结构
+		f1>数据类型
+			数值  123   int
+			字符  'abc' char  varchar
+			日期  '2000-10-01' date
+		f2>表结构创建
+			语法:create table 表(
+					列  数据类型,
+					列  数据类型...
+			);
+			需求:创建表商品(goods),商品名称(name) 字符类型,最多10个字符，商品价格(price)数值类型,出厂日期(ddate) 日期类型
+			create table goods(
+				name char(10),
+				price int,
+				ddate date
+			);
+		f3>查看表结构
+			desc 表名;
+			需求:查看goods表表结构
+				desc goods;
+		f4>修改表结构
+			需求:goods表中新增id列，数值类型
+				alter table goods add id int;
+			需求:goods表中id列数据类型转换为字符类型
+				alter table goods modify id char(10);
+			需求:goods表中删除id列
+				alter table goods drop column id;
+		f5>删除表结构
+			语法:drop table 表;
+			需求:删除goods表
+				drop table goods;
+				
+
+
+
 
 
 
 	
+
