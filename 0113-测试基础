@@ -41,6 +41,7 @@ db.emp.find({$or:[{ename:{$regex:/^AL/}},{comm:{$type:10}}]})
 db.emp.find({$and:[{comm:{$not:{$type:10}}},{$and:[{sal:{$gt:800}},{sal:{$gt:1500}},{sal:{$gt:2000}}]}]})
 ========================================================================
 1.文档的修改
+	https://docs.mongodb.com/manual/reference/operator/update/
 	db.集合.update({搜索条件},{设置条件})
 	a.覆盖
 		db.xiyouji.update({name:'redhair'},{age:1000})
@@ -57,4 +58,51 @@ db.emp.find({$and:[{comm:{$not:{$type:10}}},{$and:[{sal:{$gt:800}},{sal:{$gt:150
 		db.xiyouji.update({name:'5kong'},{$set:{name:'8jie'}},{multi:1})
 2.文档的删除
 	db.xiyouji.remove({name:'8jie'})
-	 db.xiyouji.remove({})
+	db.xiyouji.remove({})
+=======================================================================
+3.mysql基础
+	a.下载和安装
+		1>https://dev.mysql.com/downloads/mysql/
+		2>集成软件中包含mysql
+	b.mysql的启动
+	c.mysql的服务和端口
+		mysql的主服务  mysqld   端口 3306
+		win+r--cmd
+		tasklist | find "mysqld"
+		netstat -an | find "3306"
+	d.mysql的登录
+		d1>登录命令(命令提示符)
+			mysql 
+				登录本地数据库
+			mysql -u root -p
+				管理员登录本地数据库
+			mysql -h 127.0.0.1 -u root -p
+				管理员登录IP为127.0.0.1的数据库
+		d2>登录方式
+			1)进入到mysql的bin文件夹进行操作
+				d:
+				cd phpStudy\MySQL\bin
+			2)设置环境变量
+				计算机--属性--高级--环境变量--系统变量--Path中添加mysql的bin路径
+				;D:\phpStudy\MySQL\bin
+	e.mysql的基础命令
+		mongodb     mysql
+		数据库       数据库
+		集合         表
+		文档         数据
+		数据库分为2部分:数据库软件，数据库数据
+		show databases;
+			查看当前有哪些数据库
+		select database();
+			查看当前数据库的名字
+		use test;
+			当前数据库切换为test
+		show tables;
+			查看当前有哪些表
+		select * from ecs_goods\G
+		select * from ecs_goods;
+			查看ecs_goods表中所有数据
+
+
+
+	
